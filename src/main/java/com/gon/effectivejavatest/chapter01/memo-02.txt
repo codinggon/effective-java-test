@@ -1,0 +1,33 @@
+1) (read only) 생성자 체이닝과 자바빈즈
+    - telescopingconstructor/NutritionFacts
+        해당 코드의 문제는 인스턴스를 만들때 어떤 매개변수를 넣어야할지 어렵게 된다.
+    - javabeans/NutritionFacts
+        setter로 생성하기 -> 어느 값까지 setter를 해야하지?? 누락 및 실수가 발생가능성
+
+2) (read only) 빌더 사용
+    - builder/NutritionFacts
+
+3)(read only)  IllegalArgumentException
+    checked exception : 예외 처리 필수 / 컴파일 단계  / IOException, SQLException
+    unchecked exception : 실행단계에서 에러 /  NullPoint, IllegalArgument, IndexOutOf등  -> RuntimeException
+
+    - illegalargumentexception/Order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

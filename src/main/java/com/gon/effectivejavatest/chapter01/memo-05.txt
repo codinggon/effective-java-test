@@ -1,0 +1,27 @@
+1) (read only) 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라
+
+    - SpellChecker
+    //new Dictionary로 만들경우
+    //KoreaSpellChecker를 만들어서 또 dictionary를 생성해야한다.
+    //SpellChecker 코드의 재사용을 위해서 -> Dictionary를 interface로 만들면 된다
+
+    test 코드를 만들때
+    new SpellChecker(new DefaultDictionary()); 이렇게 새로운 Dictionary를 만들 수 있다.
+
+2) (코딩) 자원을 직접 명시하지 말고 의존
+
+    - staticutils/SpellChecker
+
+3) (코딩) 팩토리 매서드 패턴 - 팩토리를 추가하더라도 , 팩토리를 사용하는 클라이언트 코드는 변경할 필요가 없다.
+
+    - spell02/SpellChecker
+
+4) (코딩) 스프링 IoC (Inversion Of Control - 제어권 역전)
+    자기 코드에 대한 제어권을 자기 자신이 가지고 있지 않고 외부에서 제어하는 경우
+    빈(인스턴스) - 스프링이 만든 인스턴스
+
+    - springioc/SpellChecker
+
+    일일이 @Bean에 등록하기 어려우니
+    @Component를 통해서 해당 클래스를 bean으로 관리하는게 편하다
+

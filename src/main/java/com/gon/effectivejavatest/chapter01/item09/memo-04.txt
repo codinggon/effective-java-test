@@ -1,0 +1,25 @@
+1) 인스턴스화를 막으려거든 private  생성자를 사용하라.
+    - UtilityClass
+    유틸성을 가지고 있는 매소드들은 static으로 만든다. 그리고 모아둔다.
+
+    static 매서드로 만들어도 인스턴스를 생성해서 호출이 가능하다 -> 권장하지 않을뿐.
+    그러면 어떻게 인스턴스를 만들지 못하게 하나?
+
+    1-1. abstract class 만들기
+        - DefaultUtilityClass extends UtilityClass
+
+        단점 : 자식 인스턴스 생성시 -> 상위 기본 생성자 호출됨 , 그리고 상속클래스로 오해함
+
+    1-2. private 생성자 만들기
+        단점 : 해당 클래스에서는 생성 가능
+
+        /**
+         * 이 클래스는 인스턴스를 만들 수 없습니다.
+         */
+         private UtilityClass() {
+                 throw new AssertionError(); //이 상황이 발생하면 무조건 에러다라는 에러
+             }
+        //Assertion : 단언, 단정, 주장
+
+        >> 주석으로 설명 및 해당 Error를 사용하기
+
